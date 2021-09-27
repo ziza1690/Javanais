@@ -3,42 +3,35 @@ package fr.misensituation.exercice;
 import java.util.*;
 
 public class Javanais {
-	//String c = "bonjour";
-
-	static String voyelles = "aeiouyAEIOUY";
-
-	static String consonnes = "bcdfghjklmnpqrstvwxzBCDFGHJKLMNPQRSTVWXZ";
-
-	// Verifier si la lettre est une voyelle
-	public static boolean estUneVoyelle(char c) {
-		return (voyelles.indexOf(c) != -1);
-	}
-
-	// Verifier si la lettre est une consonne
-	public static boolean estUneConsonne(char c) {
-		return (consonnes.indexOf(c) != -1);
-	}
 
 	//Insertion de "av"
-	public static String insereSyllabe(String mot, String syllabe) {
-		String nouveauMot = mot;
-		ArrayList<Character> liste_voyelles = new ArrayList<Character>();
+	public static String inser(String mot, String syllabe){
+		List<Character> consonnes = Arrays.asList('b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z');
+		List<Character> voyelles = Arrays.asList('a', 'e', 'i', 'o', 'u', 'y');
+		char[] tab_lettres = mot.toCharArray();
 
-		if (voyelles.indexOf(mot.charAt(0)) != -1) {
-			liste_voyelles.add(mot.charAt(0));
-			nouveauMot = syllabe + mot;
-		}
+		String mot_final = "";
 
-		for (int i = 0; i < mot.length() - 1; i++) { // je parcours le mot
-			if (estUneConsonne(mot.charAt(i))) {
-				if (estUneVoyelle(mot.charAt(i + 1))) {
-					if (liste_voyelles.contains(mot.charAt(i + 1))) {
-					}
+		for (int i = 0; i < tab_lettres.length; i++) {
+			if(consonnes.contains(tab_lettres[i])){ // on verifie  si c'est une consonne
+				// c'est une consonne
+				if(voyelles.contains(tab_lettres[i + 1])){ //si oui on verifie le caractère suivant si c'est une voyelle
+					// si le caractere suivant est une voyelle
+					mot_final = mot_final + tab_lettres[i] + syllabe;
+				} else {
+					mot_final = mot_final + tab_lettres[i];
 				}
+			} else {
+				if(i == 0){
+					mot_final = syllabe;
+				}
+				// le caractere est une voyelle
 			}
 		}
-		return nouveauMot;
+
+		return mot_final;
 	}
+
 
 	public static void main(String[] args) {
 		String mot;
@@ -46,8 +39,7 @@ public class Javanais {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Entrez un mot puis appuyer sur 'Entrée' : ");
 		mot = sc.next();
-		System.out.println("Nouveau mot javanais avec la syllabe '" + syl + " ' : " + insereSyllabe(mot,syl));
-
+		System.out.println("Nouveau mot javanais avec la syllabe '" + syl + " ' : " + inser(mot,syl));
 	}
 
 }
