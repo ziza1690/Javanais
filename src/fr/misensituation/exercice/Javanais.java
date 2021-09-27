@@ -47,7 +47,7 @@ public class Javanais {
 		System.out.print("Entrez un mot puis appuyer sur 'Entrée' : ");
 		mot = sc.next();
 		System.out.println("Nouveau mot javanais avec la syllabe '" + syl + " ' : " + insereSyllabe(mot,syl));
-		System.out.println("Nouveau mot javanais avec la syllabe '" + syl + " ' : " + insereSyllabe(mot,syl));
+
 	}
 
 }
