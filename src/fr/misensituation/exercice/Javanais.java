@@ -22,7 +22,7 @@ public class Javanais {
 				// c'est une consonne
 				if(voyelles.contains(tab_lettres[i + 1])){ //si oui on verifie le caractère suivant si c'est une voyelle
 
-					mot_final = mot_final + tab_lettres[i] + syllabe; // si le caractere suivant est une voyelle on rajoute la voyelle
+					mot_final = mot_final + tab_lettres[i] + syllabe; // si le caractere suivant est une voyelle on rajoute la syllabe
 				} else {
 					mot_final = mot_final + tab_lettres[i];
 				}
