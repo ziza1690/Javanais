@@ -17,7 +17,7 @@ public class Javanais {
 			if(i + 1 == tab_lettres.length){
 				mot_final  = mot_final + tab_lettres[i];
 				break;
-			} //
+			}
 			if(consonnes.contains(tab_lettres[i])){ // on verifie  si c'est une consonne
 				// c'est une consonne
 				if(voyelles.contains(tab_lettres[i + 1])){ //si oui on verifie le caractère suivant si c'est une voyelle
