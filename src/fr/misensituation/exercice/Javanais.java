@@ -28,7 +28,7 @@ public class Javanais {
 				}
 			} else {
 				if(i == 0){
-					mot_final = syllabe + tab_lettres[i]; // si le caratère est une voyelle
+					mot_final = syllabe ; // Si la première lettre est une voyelle
 				}
 				// le caractere est une voyelle
 				mot_final = mot_final + tab_lettres[i];
