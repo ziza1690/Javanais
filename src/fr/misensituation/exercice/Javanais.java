@@ -14,7 +14,7 @@ public class Javanais {
 
 
 		for (int i = 0; i < tab_lettres.length; i++) {
-			if(i + 1 > tab_lettres.length){
+			if(i + 1 == tab_lettres.length){
 				mot_final  = mot_final + tab_lettres[i];
 				break;
 			} //
