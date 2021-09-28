@@ -12,20 +12,26 @@ public class Javanais {
 
 		String mot_final = "";
 
+
 		for (int i = 0; i < tab_lettres.length; i++) {
+			if(i + 1 > tab_lettres.length){
+				mot_final  = mot_final + tab_lettres[i];
+				break;
+			} //
 			if(consonnes.contains(tab_lettres[i])){ // on verifie  si c'est une consonne
 				// c'est une consonne
 				if(voyelles.contains(tab_lettres[i + 1])){ //si oui on verifie le caractère suivant si c'est une voyelle
-					// si le caractere suivant est une voyelle
-					mot_final = mot_final + tab_lettres[i] + syllabe;
+
+					mot_final = mot_final + tab_lettres[i] + syllabe; // si le caractere suivant est une voyelle on rajoute la voyelle
 				} else {
 					mot_final = mot_final + tab_lettres[i];
 				}
 			} else {
 				if(i == 0){
-					mot_final = syllabe;
+					mot_final = syllabe + tab_lettres[i]; // si le caratère est une voyelle
 				}
 				// le caractere est une voyelle
+				mot_final = mot_final + tab_lettres[i];
 			}
 		}
 
